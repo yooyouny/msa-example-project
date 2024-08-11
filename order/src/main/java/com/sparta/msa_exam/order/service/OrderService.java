@@ -8,6 +8,7 @@ import com.sparta.msa_exam.order.repository.OrderRepository;
 import jakarta.ws.rs.NotFoundException;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +22,7 @@ public class OrderService {
     saveOrderProducts(order);
     return OrderReadResponse.of(orderRepository.save(order));
   }
-
+  @Cacheable(cacheNames = "orderCache", key = "args[0]")
   public OrderReadResponse getOrder(Long orderId){
     Order savedOrder = orderRepository.findById(orderId).orElseThrow(()
         -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
