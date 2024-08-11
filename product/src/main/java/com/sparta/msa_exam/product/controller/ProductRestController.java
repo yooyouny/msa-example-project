@@ -29,7 +29,9 @@ public class ProductRestController {
       @RequestParam(value = "page", defaultValue = "0") int page,
       @RequestParam(value = "size", defaultValue = "10") int size,
       @RequestParam(value = "sortBy", defaultValue = "id") String sortBy,
+      @RequestParam(value = "minPrice", required = false, defaultValue = "0") int minPrice,
+      @RequestParam(value = "maxPrice", required = false) int maxPrice,
       @RequestParam("isAsc") boolean isAsc) {
-    return productService.getProductList(page, size, sortBy, isAsc);
+    return productService.getProductList(page, size, sortBy, minPrice, maxPrice, isAsc);
   }
 }
