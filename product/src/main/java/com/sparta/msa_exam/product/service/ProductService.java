@@ -27,7 +27,7 @@ public class ProductService {
 
   public Optional<Long> getProductId(Long id){
     return productRepository.findById(id)
-        .map(Product::getProductId);
+        .map(Product::getId);
   }
 
   public Page<ProductReadResponse> getProductList(

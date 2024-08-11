@@ -8,7 +8,9 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/products")
+@Validated
 public class ProductRestController {
   private final ProductService productService;
 
@@ -27,7 +30,7 @@ public class ProductRestController {
   }
 
   @GetMapping("/{id}")
-  public Optional<Long> getProductId(@RequestParam("id") @NotNull Long id){
+  public Optional<Long> getProductId(@PathVariable("id") @NotNull Long id){
     return productService.getProductId(id);
   }
 
@@ -37,7 +40,7 @@ public class ProductRestController {
       @RequestParam(value = "size", defaultValue = "10") int size,
       @RequestParam(value = "sortBy", defaultValue = "id") String sortBy,
       @RequestParam(value = "minPrice", required = false, defaultValue = "0") int minPrice,
-      @RequestParam(value = "maxPrice", required = false) int maxPrice,
+      @RequestParam(value = "maxPrice", required = false, defaultValue = "0") int maxPrice,
       @RequestParam("isAsc") boolean isAsc) {
     return productService.getProductList(page, size, sortBy, minPrice, maxPrice, isAsc);
   }
