@@ -5,6 +5,7 @@ import com.sparta.msa_exam.order.domain.OrderProduct;
 import com.sparta.msa_exam.order.dto.OrderReadResponse;
 import com.sparta.msa_exam.order.repository.OrderProductRepository;
 import com.sparta.msa_exam.order.repository.OrderRepository;
+import jakarta.ws.rs.NotFoundException;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,12 @@ public class OrderService {
     Order order = Order.builder().name(name).productsIds(orderProducts).build();
     saveOrderProducts(order);
     return OrderReadResponse.of(orderRepository.save(order));
+  }
+
+  public OrderReadResponse getOrder(Long orderId){
+    Order savedOrder = orderRepository.findById(orderId).orElseThrow(()
+        -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
+    return OrderReadResponse.of(savedOrder);
   }
 
   private void saveOrderProducts(Order order) {
