@@ -4,6 +4,8 @@ import com.sparta.msa_exam.product.dto.ProductCreateRequest;
 import com.sparta.msa_exam.product.dto.ProductReadResponse;
 import com.sparta.msa_exam.product.service.ProductService;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +24,11 @@ public class ProductRestController {
   @PostMapping
   public void createProduct(@RequestBody @Valid ProductCreateRequest requestDto) {
     productService.createProduct(requestDto.name(), requestDto.supplyPrice());
+  }
+
+  @GetMapping("/{id}")
+  public Optional<Long> getProductId(@RequestParam("id") @NotNull Long id){
+    return productService.getProductId(id);
   }
 
   @GetMapping

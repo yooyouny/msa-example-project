@@ -3,6 +3,7 @@ package com.sparta.msa_exam.product.service;
 import com.sparta.msa_exam.product.domain.Product;
 import com.sparta.msa_exam.product.dto.ProductReadResponse;
 import com.sparta.msa_exam.product.repository.ProductRepository;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,10 +18,16 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProductService {
   private final ProductRepository productRepository;
 
+  @Transactional
   public void createProduct(String name, int supplyPrice) {
     Product product = Product.builder().name(name).supplyPrice(supplyPrice).build();
 
     productRepository.save(product);
+  }
+
+  public Optional<Long> getProductId(Long id){
+    return productRepository.findById(id)
+        .map(Product::getProductId);
   }
 
   public Page<ProductReadResponse> getProductList(
