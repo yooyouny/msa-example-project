@@ -45,9 +45,8 @@ public class OrderService {
         .forEach(
             productId -> {
               OrderProduct newProduct = new OrderProduct(productId);
-              newProduct.setOrder(savedOrder);
-              orderProductRepository.save(newProduct);
               savedOrder.addOrderProduct(newProduct);
+              orderProductRepository.save(newProduct);
             });
     return OrderReadResponse.of(savedOrder);
   }

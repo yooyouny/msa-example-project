@@ -42,7 +42,12 @@ public class Order {
         .collect(Collectors.toSet());
   }
 
-  public void addOrderProduct(OrderProduct orderProduct) {
-    this.productsIds.add(orderProduct);
+  public boolean addOrderProduct(OrderProduct orderProduct) {
+    if (!this.productsIds.contains(orderProduct)) {
+      this.productsIds.add(orderProduct);
+      orderProduct.setOrder(this);
+      return true;
+    }
+    return false;
   }
 }
