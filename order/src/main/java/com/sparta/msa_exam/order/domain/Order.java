@@ -10,6 +10,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -33,5 +34,15 @@ public class Order {
   private Order(String name, Set<OrderProduct> productsIds) {
     this.name = name;
     this.productsIds = productsIds;
+  }
+
+  public Set<Long> getOrderedProductsIds() {
+    return this.productsIds.stream()
+        .map(orderProduct -> orderProduct.getProductId())
+        .collect(Collectors.toSet());
+  }
+
+  public void addOrderProduct(OrderProduct orderProduct) {
+    this.productsIds.add(orderProduct);
   }
 }

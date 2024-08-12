@@ -22,10 +22,33 @@ public class OrderService {
     saveOrderProducts(order);
     return OrderReadResponse.of(orderRepository.save(order));
   }
+
   @Cacheable(cacheNames = "orderCache", key = "args[0]")
-  public OrderReadResponse getOrder(Long orderId){
-    Order savedOrder = orderRepository.findById(orderId).orElseThrow(()
-        -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
+  public OrderReadResponse getOrder(Long orderId) {
+    Order savedOrder =
+        orderRepository
+            .findById(orderId)
+            .orElseThrow(() -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
+    return OrderReadResponse.of(savedOrder);
+  }
+
+  public OrderReadResponse addProduct(Long orderId, Set<Long> productIds) {
+    Order savedOrder =
+        orderRepository
+            .findById(orderId)
+            .orElseThrow(() -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
+
+    Set<Long> savedProductIds = savedOrder.getOrderedProductsIds();
+
+    productIds.stream()
+        .filter(productId -> !savedProductIds.contains(productId))
+        .forEach(
+            productId -> {
+              OrderProduct newProduct = new OrderProduct(productId);
+              newProduct.setOrder(savedOrder);
+              orderProductRepository.save(newProduct);
+              savedOrder.addOrderProduct(newProduct);
+            });
     return OrderReadResponse.of(savedOrder);
   }
 

@@ -23,6 +23,17 @@ public class OrderFacadeService {
     return orderService.create(name, orderProducts);
   }
 
+  @Transactional
+  public OrderReadResponse addProduct(Long orderId, List<Long> productIds) {
+    Set<Long> findIds =
+        productIds.stream()
+            .map(productId -> productClient.getProductId(productId))
+            .filter(Optional::isPresent)
+            .map(Optional::get)
+            .collect(Collectors.toSet());
+    return orderService.addProduct(orderId, findIds);
+  }
+
   private Set<OrderProduct> getOrderProducts(List<OrderProductRequest> requestDtos) {
     return requestDtos.stream()
         .map(requestDto -> productClient.getProductId(requestDto.productId()))
