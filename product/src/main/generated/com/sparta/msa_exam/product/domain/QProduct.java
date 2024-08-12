@@ -19,9 +19,9 @@ public class QProduct extends EntityPathBase<Product> {
 
     public static final QProduct product = new QProduct("product");
 
-    public final StringPath name = createString("name");
+    public final NumberPath<Long> id = createNumber("id", Long.class);
 
-    public final NumberPath<Long> productId = createNumber("productId", Long.class);
+    public final StringPath name = createString("name");
 
     public final NumberPath<Integer> supplyPrice = createNumber("supplyPrice", Integer.class);
 

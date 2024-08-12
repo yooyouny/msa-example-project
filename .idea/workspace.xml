@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="4" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fa00de4b-3bca-4161-bcfb-1ad4326831f5" name="Changes" comment="chore: 유레카 서버설정 및 코드 포맷팅 &#10;- 유레카 서버를 다시 세팅하면서 application.yml 파일을 추가 &#10;- 코드 포맷팅으로 인한 일부파일들 add">
+      <change beforePath="$PROJECT_DIR$/auth/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/auth/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/config/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gateway/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/order/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/product/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/generated/com/sparta/msa_exam/product/domain/QOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/generated/com/sparta/msa_exam/product/domain/QOrderProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/product/src/main/generated/com/sparta/msa_exam/product/domain/QProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/product/src/main/generated/com/sparta/msa_exam/product/domain/QProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.properties" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/auth">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/config">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/gateway">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/order">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/product">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/server">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/server">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/gateway">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/product">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/config">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/auth">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/order">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="order" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="product" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="product" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2kMFIs95cyypkU15pQsiolV5Sew" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/yooyouny/projects/msa_exam&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3e891beb2d5130cbc67273f413351b84&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;,
+      &quot;redis&quot;
+    ]
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/src/main/resources/config-repo" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config/src/main/resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.sparta.msa_exam.order.dto" />
+      <recent name="com.sparta.msa_exam.product.dto" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Gradle.product [build]">
+    <configuration name="order [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="order [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/order" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="product [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/product" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="product [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/product" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="server [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/server" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="auth.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.auth.AuthApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="config.main" />
+      <selectedOptions>
+        <option name="environmentVariables" />
+      </selectedOptions>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.config.ConfigApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="order.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.order.OrderApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication:19093" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="product.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.product.ProductApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=19093" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.msa_exam.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductApplication:19094" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" value="local" />
+      <module name="product.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sparta.msa_exam.product.ProductApplication" />
+      <option name="VM_PARAMETERS" value="-Dserver.port=19094" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.msa_exam.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Gradle.order [build]" />
+      <item itemvalue="Gradle.order [clean]" />
+      <item itemvalue="Gradle.product [build]" />
+      <item itemvalue="Gradle.product [clean]" />
+      <item itemvalue="Gradle.server [build]" />
+      <item itemvalue="Spring Boot.AuthApplication" />
+      <item itemvalue="Spring Boot.ConfigApplication" />
+      <item itemvalue="Spring Boot.OrderApplication" />
+      <item itemvalue="Spring Boot.ProductApplication:19093" />
+      <item itemvalue="Spring Boot.ProductApplication:19094" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.product [build]" />
+        <item itemvalue="Gradle.product [clean]" />
+        <item itemvalue="Gradle.order [build]" />
+        <item itemvalue="Gradle.order [clean]" />
+        <item itemvalue="Gradle.server [build]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="init: MSA 프로젝트 구성하기&#10;- server, gateway, auth, product, order 모듈 추가">
+      <option name="closed" value="true" />
+      <created>1723012274954</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723012274954</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fa00de4b-3bca-4161-bcfb-1ad4326831f5" name="Changes" comment="init: MSA 프로젝트 구성하기&#10;- server, gateway, auth, product, order 모듈 추가" />
+      <created>1723085461915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1723085461915</updated>
+      <workItem from="1723085463358" duration="908000" />
+      <workItem from="1723086740709" duration="6298000" />
+      <workItem from="1723097104901" duration="1312000" />
+      <workItem from="1723098552153" duration="609000" />
+      <workItem from="1723099409139" duration="841000" />
+      <workItem from="1723101092475" duration="1190000" />
+      <workItem from="1723104069703" duration="2579000" />
+      <workItem from="1723169428572" duration="16030000" />
+      <workItem from="1723328099675" duration="2378000" />
+      <workItem from="1723332705553" duration="8805000" />
+      <workItem from="1723343638592" duration="9312000" />
+      <workItem from="1723355742983" duration="30249000" />
+      <workItem from="1723429124857" duration="25000" />
+    </task>
+    <task id="LOCAL-00002" summary="config: 공통 config 서버 추가&#10;- 공통 config 처리를 위한 config server 추가">
+      <option name="closed" value="true" />
+      <created>1723174476847</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1723174476848</updated>
+    </task>
+    <task id="LOCAL-00003" summary="config: 공통 config 서버 추가&#10;- 공통 config 처리를 위한 config server 추가">
+      <option name="closed" value="true" />
+      <created>1723174577425</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1723174577425</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore: 의존성 spirng web을 webflux로 변경&#10;- spring cloud gateway가 리액티브 모델이라 변경">
+      <option name="closed" value="true" />
+      <created>1723175044970</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1723175044970</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: config server에 test profile 추가">
+      <option name="closed" value="true" />
+      <created>1723335193943</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1723335193943</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: 상품 추가 API 개발&#10;- dto에서 validation 체크&#10;- mysql, spring data jpa, validation, config client 의존성 추가">
+      <option name="closed" value="true" />
+      <created>1723336131629</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1723336131629</updated>
+    </task>
+    <task id="LOCAL-00007" summary="test: 상품 추가 API 테스트 추가&#10;- controller 레이어에서 dto validation 예외 테스트&#10;- service 레이어에서 상품추가 정상수행 테스트">
+      <option name="closed" value="true" />
+      <created>1723336185465</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1723336185465</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: 상품 조회 API 개발&#10;- 페이징처리 &#10;- 성능개선필요***">
+      <option name="closed" value="true" />
+      <created>1723340760627</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1723340760627</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: 상품 조회 API QueryDSL 방식으로 변경&#10;- 가격조건으로 조회를 추가하며 대용량조회에 적합한 queryDSL로 변경&#10;- queryDSL 의존성 추가">
+      <option name="closed" value="true" />
+      <created>1723358311200</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1723358311200</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: 주문 추가 시 상품 조회를 위한 feignClient 연결&#10;- Optional 감싼 형태로 그대로 던져 주문이 존재하는 경우에만 저장하도록 처리할 것&#10;- 기존 상품 추가 로직에 @Transactional 추가">
+      <option name="closed" value="true" />
+      <created>1723376880105</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1723376880105</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: 주문 추가 API 개발&#10;- Facade 패턴을 이용하여 의존도 완화&#10;- 가장 맨 처음에 호출되는 서비스 메소드에만 @Transacional을 붙여 default인 required로 전파되게 함&#10;- OrderProduct를 저장한 다음 Order를 저장함">
+      <option name="closed" value="true" />
+      <created>1723377063105</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1723377063105</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: 주문 추가 API 개발&#10;- Facade 패턴을 이용하여 의존도 완화&#10;- 가장 맨 처음에 호출되는 서비스 메소드에만 @Transacional을 붙여 default인 required로 전파되게 함&#10;- OrderProduct를 저장한 다음 Order를 저장함">
+      <option name="closed" value="true" />
+      <created>1723377096137</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1723377096137</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: 주문 단건 조회 API 개발">
+      <option name="closed" value="true" />
+      <created>1723378049416</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1723378049416</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix: 주문 API 오류수정">
+      <option name="closed" value="true" />
+      <created>1723384215421</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1723384215421</updated>
+    </task>
+    <task id="LOCAL-00015" summary="fix: 상품 API 오류수정">
+      <option name="closed" value="true" />
+      <created>1723388769336</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1723388769336</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix: 주문 API 오류수정">
+      <option name="closed" value="true" />
+      <created>1723388807568</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1723388807568</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: 주문 단건 조회 API에 캐시 적용&#10;- redis 의존성 추가&#10;- redis configuration 추가&#10;- serializable 구현을 위해 record에서 class로 변경">
+      <option name="closed" value="true" />
+      <created>1723390738778</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1723390738778</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: 주문에 상품을 추가하는 API 개발&#10;- 기존 productId와의 중복제거 &#10;- 새로운 orderProduct 저장 후 order에 set">
+      <option name="closed" value="true" />
+      <created>1723427972608</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1723427972608</updated>
+    </task>
+    <task id="LOCAL-00019" summary="chore: 유레카 서버설정 및 코드 포맷팅 &#10;- 유레카 서버를 다시 세팅하면서 application.yml 파일을 추가 &#10;- 코드 포맷팅으로 인한 일부파일들 add">
+      <option name="closed" value="true" />
+      <created>1723428061583</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1723428061583</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/server" />
+    </ignored-roots>
+    <MESSAGE value="init: MSA 프로젝트 구성하기&#10;- server, gateway, auth, product, order 모듈 추가" />
+    <MESSAGE value="config: 공통 config 서버 추가&#10;- 공통 config 처리를 위한 config server 추가" />
+    <MESSAGE value="chore: 의존성 spirng web을 webflux로 변경&#10;- spring cloud gateway가 리액티브 모델이라 변경" />
+    <MESSAGE value="chore: config server에 test profile 추가" />
+    <MESSAGE value="feat: 상품 추가 API 개발&#10;- dto에서 validation 체크&#10;- mysql, spring data jpa, validation, config client 의존성 추가" />
+    <MESSAGE value="test: 상품 추가 API 테스트 추가&#10;- controller 레이어에서 dto validation 예외 테스트&#10;- service 레이어에서 상품추가 정상수행 테스트" />
+    <MESSAGE value="feat: 상품 조회 API 개발&#10;- 페이징처리 &#10;- 성능개선필요***" />
+    <MESSAGE value="refactor: 상품 조회 API QueryDSL 방식으로 변경&#10;- 가격조건으로 조회를 추가하며 대용량조회에 적합한 queryDSL로 변경&#10;- queryDSL 의존성 추가" />
+    <MESSAGE value="feat: 주문 추가 시 상품 조회를 위한 feignClient 연결&#10;- Optional 감싼 형태로 그대로 던져 주문이 존재하는 경우에만 저장하도록 처리할 것&#10;- 기존 상품 추가 로직에 @Transactional 추가" />
+    <MESSAGE value="feat: 주문 추가 API 개발&#10;- Facade 패턴을 이용하여 의존도 완화&#10;- 가장 맨 처음에 호출되는 서비스 메소드에만 @Transacional을 붙여 default인 required로 전파되게 함&#10;- OrderProduct를 저장한 다음 Order를 저장함" />
+    <MESSAGE value="feat: 주문 단건 조회 API 개발" />
+    <MESSAGE value="fix: 상품 API 오류수정" />
+    <MESSAGE value="fix: 주문 API 오류수정" />
+    <MESSAGE value="feat: 주문 단건 조회 API에 캐시 적용&#10;- redis 의존성 추가&#10;- redis configuration 추가&#10;- serializable 구현을 위해 record에서 class로 변경" />
+    <MESSAGE value="feat: 주문에 상품을 추가하는 API 개발&#10;- 기존 productId와의 중복제거 &#10;- 새로운 orderProduct 저장 후 order에 set" />
+    <MESSAGE value="chore: 유레카 서버설정 및 코드 포맷팅 &#10;- 유레카 서버를 다시 세팅하면서 application.yml 파일을 추가 &#10;- 코드 포맷팅으로 인한 일부파일들 add" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: 유레카 서버설정 및 코드 포맷팅 &#10;- 유레카 서버를 다시 세팅하면서 application.yml 파일을 추가 &#10;- 코드 포맷팅으로 인한 일부파일들 add" />
+  </component>
+</project>
