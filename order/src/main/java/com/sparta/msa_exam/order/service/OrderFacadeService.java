@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class OrderFacadeService {
   private final OrderService orderService;
-  private final ProductClient productClient;
+  private final ProductService productService;
 
   @Transactional
   public OrderReadResponse create(String name, List<OrderProductRequest> requestDtos) {
@@ -27,7 +27,7 @@ public class OrderFacadeService {
   public OrderReadResponse addProduct(Long orderId, List<Long> productIds) {
     Set<Long> findIds =
         productIds.stream()
-            .map(productId -> productClient.getProductId(productId))
+            .map(productId -> productService.getProductId(productId))
             .filter(Optional::isPresent)
             .map(Optional::get)
             .collect(Collectors.toSet());
@@ -36,7 +36,7 @@ public class OrderFacadeService {
 
   private Set<OrderProduct> getOrderProducts(List<OrderProductRequest> requestDtos) {
     return requestDtos.stream()
-        .map(requestDto -> productClient.getProductId(requestDto.productId()))
+        .map(requestDto -> productService.getProductId(requestDto.productId()))
         .filter(Optional::isPresent)
         .map(optionalProductId -> new OrderProduct(optionalProductId.get()))
         .collect(Collectors.toSet());
