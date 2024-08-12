@@ -17,6 +17,7 @@ public class OrderService {
   private final OrderRepository orderRepository;
   private final OrderProductRepository orderProductRepository;
 
+  //TODO :: facade에서 호출되는 메소드인데 여기서 @Transacional을 붙이지 않아도 같은 트랜잭션으로 들어갈거지만 표시를 해주는게 좋은건지?
   public OrderReadResponse create(String name, Set<OrderProduct> orderProducts) {
     Order order = Order.builder().name(name).productsIds(orderProducts).build();
     saveOrderProducts(order);
@@ -25,12 +26,11 @@ public class OrderService {
 
   @Cacheable(cacheNames = "orderCache", key = "args[0]")
   public OrderReadResponse getOrder(Long orderId) {
-    Order savedOrder =
-        orderRepository
+    return orderRepository
             .findById(orderId)
+            .map(OrderReadResponse::of)
             .orElseThrow(() -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
-    return OrderReadResponse.of(savedOrder);
-  }
+    }
 
   public OrderReadResponse addProduct(Long orderId, Set<Long> productIds) {
     Order savedOrder =
@@ -39,7 +39,6 @@ public class OrderService {
             .orElseThrow(() -> new NotFoundException("해당 주문건을 찾을 수 없습니다"));
 
     Set<Long> savedProductIds = savedOrder.getOrderedProductsIds();
-
     productIds.stream()
         .filter(productId -> !savedProductIds.contains(productId))
         .forEach(
