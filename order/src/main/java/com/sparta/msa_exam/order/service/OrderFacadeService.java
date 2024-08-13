@@ -27,7 +27,7 @@ public class OrderFacadeService {
   public OrderReadResponse addProduct(Long orderId, List<Long> productIds) {
     Set<Long> findIds =
         productIds.stream()
-            .map(productId -> productService.getProductId(productId))
+            .map(productId -> productService.getProductIds(productId))
             .filter(Optional::isPresent)
             .map(Optional::get)
             .collect(Collectors.toSet());
@@ -36,7 +36,7 @@ public class OrderFacadeService {
 
   private Set<OrderProduct> getOrderProducts(List<OrderProductRequest> requestDtos) {
     return requestDtos.stream()
-        .map(requestDto -> productService.getProductId(requestDto.productId()))
+        .map(requestDto -> productService.getProductIds(requestDto.productId()))
         .filter(Optional::isPresent)
         .map(optionalProductId -> new OrderProduct(optionalProductId.get()))
         .collect(Collectors.toSet());
