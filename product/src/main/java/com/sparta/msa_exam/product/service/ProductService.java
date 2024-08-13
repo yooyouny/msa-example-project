@@ -5,6 +5,8 @@ import com.sparta.msa_exam.product.dto.ProductReadResponse;
 import com.sparta.msa_exam.product.repository.ProductRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,12 +19,11 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class ProductService {
   private final ProductRepository productRepository;
-
   @Transactional
-  public void createProduct(String name, int supplyPrice) {
+  @CacheEvict(cacheNames = "productList", allEntries = true)
+  public ProductReadResponse createProduct(String name, int supplyPrice) {
     Product product = Product.builder().name(name).supplyPrice(supplyPrice).build();
-
-    productRepository.save(product);
+    return ProductReadResponse.of(productRepository.save(product));
   }
 
   public Optional<Long> getProductId(Long id){
@@ -30,6 +31,7 @@ public class ProductService {
         .map(Product::getId);
   }
 
+  @Cacheable(cacheNames = "productList")
   public Page<ProductReadResponse> getProductList(
       int page, int size, String sortBy, int minPrice, int maxPrice, boolean isAsc) {
     Sort.Direction direction = isAsc ? Sort.Direction.ASC : Sort.Direction.DESC;

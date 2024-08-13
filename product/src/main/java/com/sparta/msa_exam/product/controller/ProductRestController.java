@@ -25,8 +25,8 @@ public class ProductRestController {
   private final ProductService productService;
 
   @PostMapping
-  public void createProduct(@RequestBody @Valid ProductCreateRequest requestDto) {
-    productService.createProduct(requestDto.name(), requestDto.supplyPrice());
+  public ProductReadResponse createProduct(@RequestBody @Valid ProductCreateRequest requestDto) {
+    return productService.createProduct(requestDto.name(), requestDto.supplyPrice());
   }
 
   @GetMapping("/{id}")
@@ -41,7 +41,7 @@ public class ProductRestController {
       @RequestParam(value = "sortBy", defaultValue = "id") String sortBy,
       @RequestParam(value = "minPrice", required = false, defaultValue = "0") int minPrice,
       @RequestParam(value = "maxPrice", required = false, defaultValue = "0") int maxPrice,
-      @RequestParam("isAsc") boolean isAsc) {
+      @RequestParam(value = "isAsc", defaultValue = "false") boolean isAsc) {
     return productService.getProductList(page, size, sortBy, minPrice, maxPrice, isAsc);
   }
 }
